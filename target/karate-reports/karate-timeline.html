@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"petstoreAutomation[1:6]","start":1702382225767,"end":1702382227506,"title":"petstoreAutomation[1:6] 18:57:05.767-18:57:07.506 Add a new pet"},{"id":2,"group":1,"content":"petstoreAutomation[2:12]","start":1702382227510,"end":1702382228289,"title":"petstoreAutomation[2:12] 18:57:07.510-18:57:08.289 Get pet by ID"},{"id":3,"group":1,"content":"petstoreAutomation[3:17]","start":1702382228306,"end":1702382229068,"title":"petstoreAutomation[3:17] 18:57:08.306-18:57:09.068 Update pet information"},{"id":4,"group":1,"content":"petstoreAutomation[4:23]","start":1702382229082,"end":1702382229820,"title":"petstoreAutomation[4:23] 18:57:09.082-18:57:09.820 Place an order"},{"id":5,"group":1,"content":"petstoreAutomation[5:29]","start":1702382229828,"end":1702382230589,"title":"petstoreAutomation[5:29] 18:57:09.828-18:57:10.589 Get user by username"},{"id":6,"group":1,"content":"petstoreAutomation[6:35]","start":1702382230592,"end":1702382231327,"title":"petstoreAutomation[6:35] 18:57:10.592-18:57:11.327 Update user information"},{"id":7,"group":1,"content":"petstoreAutomation[7:41]","start":1702382231341,"end":1702382232081,"title":"petstoreAutomation[7:41] 18:57:11.341-18:57:12.081 Get pet by Status"},{"id":8,"group":1,"content":"petstoreAutomation[8:47]","start":1702382232085,"end":1702382232817,"title":"petstoreAutomation[8:47] 18:57:12.085-18:57:12.817 Find purchase by order id"},{"id":9,"group":1,"content":"petstoreAutomation[9:52]","start":1702382232835,"end":1702382233589,"title":"petstoreAutomation[9:52] 18:57:12.835-18:57:13.589 return pet inventories by status"},{"id":10,"group":1,"content":"petstoreAutomation[10:57]","start":1702382233604,"end":1702382234337,"title":"petstoreAutomation[10:57] 18:57:13.604-18:57:14.337 login user into system"},{"id":11,"group":1,"content":"petstoreAutomation[11:63]","start":1702382234338,"end":1702382235109,"title":"petstoreAutomation[11:63] 18:57:14.338-18:57:15.109 user logout"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
